@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Result{% endblock title %}
+
+{% block content %}
+
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title">Weather in the city: <strong>{{ result.name }}</strong> in <strong>{{ result.sys.country }}</strong> </h3>
+  </div>
+  <div class="panel-body">
+      <p>Weather: {{ result.weather[0].description }}</p>
+      <p>Current temperature: {{ result.main.temp }} &#x2103;</p>
+      <p>Lowest temperature: {{ result.main.temp_min }} &#x2103;</p>
+      <p>Highest temperature: {{ result.main.temp_max }} &#x2103;</p>
+      <p>Humidity: {{ result.main.humidity }} %</p>
+      <p>Wind speed: {{ result.wind.speed }} km/h</p>
+      <p>Pressure: {{ result.main.pressure }} mBar</p>
+  </div>
+</div>
+
+{% endblock content %}
