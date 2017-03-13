@@ -59,4 +59,6 @@ docs/_build/
 # PyBuilder
 target/
 
+# Secret files
+*secrets.py
 
