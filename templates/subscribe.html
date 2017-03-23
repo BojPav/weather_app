@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Subscribe page{% endblock title %}
+
+{% block content %}
+<br>
+<br>
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+    <div class="panel panel-primary">
+        <div class="panel-heading panel-heading-comments-custom">
+            <h3 class="panel-title">Subscribe and receive everyday email about weather in your town.</h3>
+        </div>
+        <div class="panel-body">
+        <form method="post" action="/subscribe">
+
+            <!-- Hidden input form for creating CSRF code
+            <input type="hidden" name="csrf_token" value="{{ csrf_token }}"> -->
+
+            <!-- Standard visible input form -->
+            <div class="form-group">
+                <label>Your E-mail:</label>
+                <input class="form-control" name="subscriber_email" type="email" placeholder="e.g. someone@example.com..." required>
+                <br>
+                 <label>Your Town(only one):</label>
+                <input class="form-control" name="subscriber_town" type="text" placeholder="e.g. New York, Ljubljana, Belgrade..." required>
+            </div>
+            <button class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span> Subscribe</button>
+        </form>
+        </div>
+    </div>
+    </div>
+</div>
+
+{% endblock content %}

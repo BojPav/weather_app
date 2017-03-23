@@ -1,0 +1,5 @@
+cron:
+- description: Send weather info emails to subscribers
+  url: /cron/send-weather-info
+  schedule: every day 08:00
+  timezone: Europe/Ljubljana
