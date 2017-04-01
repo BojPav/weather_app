@@ -11,7 +11,12 @@ class WeatherHandler(BaseHandler):
         url = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&appid=" + secrets.secret()  # API open weather url
         content = urlfetch.fetch(url)  # convert to JSON
         result = json.loads(content.content)  # content JSON
-        params = {"result": result}
+
+        icon_code = result["weather"][0]["icon"] # get icon code
+
+        icon_url = "http://openweathermap.org/img/w/" + icon_code + ".png" # icon url
+
+        params = {"result": result, "icon_url": icon_url}
 
         self.render_template("result.html", params=params)
 
@@ -19,7 +24,7 @@ class WeatherHandler(BaseHandler):
 class MarsWeatherHandler(BaseHandler):
     def get(self):
         url = "http://marsweather.ingenology.com/v1/latest/"  # API for weather on MARS
-        result = urlfetch.fetch(url)
+        result = urlfetch.fetch(url) # convert to JSON
         podatki = json.loads(result.content)
         params = {"podatki": podatki}
 

@@ -12,4 +12,5 @@ class EmailToOwnerWorker(BaseHandler):
         mail.send_mail(sender="pavlovicbojan86@gmail.com",
                        to="pavlovicbojan86@gmail.com",
                        subject="New Subscriber today !",
-                       body="""Subscriber e-mail: {0} ; Subscriber town: {1} """.format(subscriber_email, subscriber_town))
+                       body="""Subscriber e-mail: {0} ; Subscriber town: {1} """.format(subscriber_email,
+                                                                                        subscriber_town))

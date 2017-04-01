@@ -6,20 +6,23 @@
 
 <div class="panel panel-info">
   <div class="panel-heading">
-    <h3 class="panel-title">Weather in the city: <strong>{{ result.name }}</strong> in <strong>{{ result.sys.country }}</strong> </h3>
+      <h3 class="panel-title">Current weather in the city: <strong>{{ result.name }}</strong> (<strong>{{ result.sys.country }}</strong>) </h3>
   </div>
-  <div class="panel-body">
-      <p>Weather: {{ result.weather[0].description }}</p>
-      <p>Current temperature: {{ result.main.temp }} &#x2103;</p>
-      <p>Lowest temperature: {{ result.main.temp_min }} &#x2103;</p>
-      <p>Highest temperature: {{ result.main.temp_max }} &#x2103;</p>
-      <p>Humidity: {{ result.main.humidity }} %</p>
-      <p>Wind speed: {{ result.wind.speed }} km/h</p>
-      <p>Pressure: {{ result.main.pressure }} mBar</p>
+    <div class="panel-body">
+
+      <h2> <img src="{{ icon_url }}" height="100px" width="100px"> <strong> {{ result.main.temp }} &#x2103; </strong> </h2>
+      <p>Weather description: <strong>{{ result.weather[0].description }}</strong></p>
+
+      <p>Lowest temperature today: <strong>{{ result.main.temp_min }} &#x2103;</strong></p>
+      <p>Highest temperature today: <strong>{{ result.main.temp_max }} &#x2103;</strong></p>
+      <p>Humidity: <strong>{{ result.main.humidity }} %</strong></p>
+      <p>Wind speed: <strong>{{ result.wind.speed }} km/h</strong></p>
+      <p>Pressure: <strong>{{ result.main.pressure }} mBar</strong></p>
   </div>
+
 </div>
 <!-- Back button -->
         <div class="col-md-8 col-md-offset-2 text-center">
-            <a href="/" class="btn btn-primary" role="button">Back to Main page</a>
+            <a href="/" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Back to Main page</a>
         </div>
 {% endblock content %}

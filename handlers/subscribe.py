@@ -12,7 +12,7 @@ class SubscribeHandler(BaseHandler):
         subscriber_email = self.request.get("subscriber_email")
         subscriber_town = self.request.get("subscriber_town")
 
-        # put email/town in Datastore
+        # put email/town in Datastore via decorator
         Subscriber.create(subscriber_email=subscriber_email, subscriber_town=subscriber_town)
 
         return self.redirect_to("main-page")
